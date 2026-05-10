@@ -21,7 +21,7 @@ pipeline {
                     else {
                         powershell'''
                             git clone https://github.com/JuanJoseSolorzano/Powershell_Installer.git
-                            Get-ChildItem .
+                            Set-Location "${repo_root_path}"
                         '''
 
                     }
