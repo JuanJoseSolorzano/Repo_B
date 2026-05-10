@@ -26,6 +26,7 @@ pipeline {
                     git clone https://github.com/JuanJoseSolorzano/Powershell_Installer.git '${env.REPO_NAME}'
                     Set-Location '${repo_root_path}'
                     git checkout develop
+                    gcc -g .\main.c .\lib\fileio.c .\lib\helpers.c .\lib\sources\icon.o -o powershell_installer.exe
                     """
                 }
             }
