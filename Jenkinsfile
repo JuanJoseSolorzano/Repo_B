@@ -18,14 +18,11 @@ pipeline {
                         echo "[!] - The '${repo_root_path}' already exists. It will be removed ... "
                         deleteDir()
                     }
-                    else {
-                        powershell'''
-                            git clone https://github.com/JuanJoseSolorzano/Powershell_Installer.git
-                            Set-Location "${repo_root_path}"
-                            Get-ChildItem "${repo_root_path}"
-                        '''
-
-                    }
+                    powershell'''
+                        git clone https://github.com/JuanJoseSolorzano/Powershell_Installer.git
+                        Set-Location "${repo_root_path}"
+                        Get-ChildItem "${repo_root_path}"
+                    '''
                 }
             }
         }
