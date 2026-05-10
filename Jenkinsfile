@@ -8,7 +8,11 @@ pipeline {
 
         stage('Repo2 Build') {
             steps {
-                bat 'git clone https://github.com/JuanJoseSolorzano/Powershell_Installer.git'
+                powershell'''
+                    Write-Host $env:WORKPACE
+                    git clone https://github.com/JuanJoseSolorzano/Powershell_Installer.git
+                '''
+                
             }
         }
     }
