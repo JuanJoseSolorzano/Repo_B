@@ -15,12 +15,15 @@ pipeline {
                 script {
                     def repo_root_path = "${env.WORKSPACE}/${env.REPO_NAME}"
                     if (fileExists(repo_root_path)){
+                        echo "[!] - The '${repo_root_path}' already exists. It will be removed ... "
                         deleteDir()
                     }
                     else {
                         powershell'''
                             git clone https://github.com/JuanJoseSolorzano/Powershell_Installer.git
+                            Get-ChildItem .
                         '''
+
                     }
                 }
             }
