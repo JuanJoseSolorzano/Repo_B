@@ -8,7 +8,7 @@ pipeline {
 
         stage('Repo2 Build') {
             steps {
-                bat 'echo Repo_B running'
+                bat 'git clone https://github.com/JuanJoseSolorzano/Powershell_Installer.git'
             }
         }
     }
