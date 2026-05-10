@@ -9,7 +9,8 @@ pipeline {
         stage('Repo2 Build') {
             steps {
                 powershell'''
-                    Write-Host $env:WORKPACE
+                    Write-Host "Workspace: Test"
+                    Write-Host $env:WORKSPACE
                     git clone https://github.com/JuanJoseSolorzano/Powershell_Installer.git
                 '''
                 
